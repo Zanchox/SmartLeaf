@@ -1141,4 +1141,10 @@ PAGINA CONFIRMACION DE COMPRA*/
     .info_mi_carrito5{
         padding: 10px;
     }
+
+/*LANDING PAGE*/
+
+    .mensaje_landing_page{
+        font-size: 10px;
+    }
 }
