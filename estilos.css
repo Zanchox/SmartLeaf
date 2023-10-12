@@ -112,7 +112,7 @@
 
 .banner{
     margin-top: 100px;
-    background-image: url("../Imagenes/Banner-hojas.jpeg");
+    background-image: url("./Imagenes/Banner-hojas.jpeg");
     text-align: center;
     width: 100%;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.15);
