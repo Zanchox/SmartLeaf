@@ -1,0 +1,1144 @@
+@font-face {
+    font-family: Jua;
+    src: url(../Fonts/Jua-Regular.ttf);
+}
+
+@font-face {
+    font-family: Hubballi;
+    src: url(../Fonts/Hubballi-Regular.ttf);
+}
+
+@font-face {
+    font-family: Kanit;
+    src: url(../Fonts/Kanit-Regular.ttf);
+}
+
+@font-face {
+    font-family: PatrickHand;
+    src: url(../Fonts/PatrickHand-Regular.ttf);
+}
+
+@font-face {
+    font-family: BaiJamjuree;
+    src: url(../Fonts/BaiJamjuree-Regular.ttf);
+}
+
+*{margin:0; padding:0;}
+
+.body{
+    display: flex;
+    color: #51483C;
+    font-size: 1.2rem; 
+    background:#E6E6E6;
+    height: 100%;
+    margin: 0;
+}
+
+.header{
+    top: 0px;
+    background:#deffaa; /*Piel #F2DFD4 AmarilloF #F9B73D*/
+    position: fixed;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.header a {
+    color: #353333;
+    text-decoration: none;
+}
+
+.container_header{
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 20px;
+    font-family: Kanit;
+    text-transform: uppercase;
+    justify-content: space-between;
+}
+
+.logo-nav{
+    display: flex;
+    align-items: center;
+}
+
+.sombra{
+    border-radius: 5px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.menu-icon{
+    display: none;
+}
+
+.navigation{
+    padding-left: 50px;
+}
+
+.navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li{
+    display: inline-block;
+}
+
+.navigation ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+}
+
+.navigation ul li a:hover{
+    background:#353333;
+    color: #FFFFFF;
+}
+
+.carrito_svg{
+    fill: #353333;
+}
+
+.carrito:hover .carrito_svg{
+    background-color:#353333;
+    fill:#E6E6E6;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.banner{
+    margin-top: 100px;
+    background-image: url("../Imagenes/Banner-hojas.jpeg");
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.texto_centrado_sobre_banner{
+    font-family: BaiJamjuree;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: #FFFFFF;
+}
+
+.background_gris{
+    background: #E6E6E6; /*Gris #E6E6E6 Verde #BCC8BA*/
+    max-width: 1280px;
+    padding: 50px;
+    margin: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.bloque_informacion{
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px;
+    background: #77AF52;
+    border-radius: 10px;
+}
+
+.bloque_imagen{
+    border-radius: 5px;
+}
+
+.bloque_texto{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bloque_texto_centrado{
+    margin-top: 60px;
+}
+
+.titulo_del_bloque{
+    color: #ffffff;
+    font-family: Kanit;
+    text-align:justify;
+    padding-bottom: 10px;
+    font-size: 38px;
+}
+
+.texto_del_bloque{
+    color: #ffffff;
+    font-family: Kanit;
+    text-align:justify;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.bloque_boton_descargala{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton_gris {
+    display: inline-block;
+    padding: 10px 40px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
+    margin: 10px; /* Espaciado externo (arriba/abajo, izquierda/derecha) */
+    background-color: #353333; /* Color de fondo */
+    color: #ffffff; /* Color del texto+//*Verde #40513C*/
+    border: 2px solid #000000; /* Borde del botón */
+    border-radius: 5px; /* Borde redondeado */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-family: Kanit;
+    font-size: 20px;
+}
+
+.boton_gris:hover{
+    background:#5e5e5e;
+    color: #000000;
+}
+
+.boton_marcas {
+    display: inline-block;
+    padding: 10px 40px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
+    margin: 10px; /* Espaciado externo (arriba/abajo, izquierda/derecha) */
+    background-color: #ffffff; /* Color de fondo */
+    color: #ffffff; /* Color del texto+//*Verde #40513C*/
+    border: 2px solid #b0b0b0; /* Borde del botón */
+    border-radius: 5px; /* Borde redondeado */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-family: Kanit;
+    font-size: 20px;
+}
+
+.boton_marcas:hover{
+    background:#6f6f6f;
+    border-color: #000000;
+}
+
+.flecha {
+    position: absolute; /* Posiciona la flecha de forma absoluta dentro del botón */
+    right: 10px; /* Ajusta la distancia desde el borde derecho */
+    top: 50%; /* Alinea la flecha verticalmente en el centro */
+    transform: translateY(-50%); /* Alinea verticalmente la flecha */
+}
+
+.boton_verde{
+    display: inline-block;
+    padding: 10px 40px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
+    margin: 10px; /* Espaciado externo (arriba/abajo, izquierda/derecha) */
+    background-color: #77AF52; /* Color de fondo */
+    color: #FFFFFF; /* Color del texto+//*Verde #40513C*/
+    border: 2px solid #025E00; /* Borde del botón */
+    border-radius: 10px; /* Borde redondeado */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: Kanit;
+}
+
+.boton_verde:hover{
+    background:#546747;
+    color: #76AF51;
+}
+
+.footer{
+    display: flex;
+    background: #3f3f3f;
+    justify-content: center;
+    align-self: flex-end;
+    width: 100%;
+}
+
+.info_footer{
+    display: flex;
+    padding: 20px 0;
+}
+
+.contactos{
+    color: #FFFFFF;
+    font-family: Kanit;
+    font-size: 1.5rem;
+}
+
+/*--------------------------------------------------------------------
+PAGINA LANDING PAGE*/
+
+.imagen_fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(253,220,166,1) 0%, rgba(188,200,186,1) 78%);
+}
+
+.contenedor_landing_page{
+    position: relative;
+    padding: 40px 60px 60px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.bloque_central_landing_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje_landing_page{
+    display: flex;
+    text-align: center;
+    padding: 0 20%;
+    margin-bottom: 30px;
+}
+
+.texto_mensaje{
+    font-family: Kanit;
+    color:#2b2b2b;
+    font-size: 60px;
+    letter-spacing: 1px;
+    line-height: 90%;
+}
+
+.contacto_landing_page{
+    display: flex;
+    text-align: center;
+}
+
+.texto_contacto{
+    font-family: Kanit;
+    color:#2b2b2b;
+    font-size: 20px;
+}
+
+/*--------------------------------------------------------------------
+PAGINA INDEX*/
+
+.bloque_texto_index{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo_bloque_info{
+    display: flex;
+    font-size: 30px;
+    font-family: Kanit;
+    text-align:justify;
+    align-items: center;
+}
+
+.texto_bloque_info{
+    display: flex;
+    font-size: 20px;
+    font-family: Kanit;
+    text-align:justify;
+}
+
+.bloque_info_jardinerito{
+    display: flex;
+}
+
+.bloque_atributos{
+    display: flex;
+}
+
+.contenedor_atributos1{
+    background-color: #77a576;
+}
+
+.contenedor_atributos2{
+    background-color: #9dc59c;
+}
+
+.contenedor_atributos_general{
+    border: 1px solid #E6E6E6;
+    width: 25%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.separador{
+    display: flex;
+    justify-content: center;
+    font-family: Kanit;
+    color: #ffffff;
+    margin: 40px 0;
+    padding: 10px 0;
+    background-color: #1b2b1c;
+    border-radius: 10px;
+}
+
+.texto_separador{
+    display: flex;
+    text-align: center;
+}
+
+.imagen_jardinerito{
+    height: 400px;
+    width: 400px;
+}
+
+/*--------------------------------------------------------------------
+PAGINA JARDINERITO*/
+
+.titulo_bloque_jardinerito{
+    color:#000000;
+    display: flex;
+    text-align: center;
+    font-size: 30px;
+    font-family: Kanit;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.texto_jardinerito{
+    color: #000000;
+    display: flex;
+    font-family: Kanit;
+    text-align: justify;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.titulo_atributos{
+    color:#FFFFFF;
+    display: flex;
+    font-size: 60px;
+    font-family: Kanit;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.texto_atributos{
+    color: #FFFFFF;
+    display: flex;
+    font-family: Kanit;
+    text-align: justify;
+    padding-bottom: 20px;
+    font-size: 30px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.bloque_video_anuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video_anuncio{
+    display: flex;
+    background-color: #025E00;
+    width: 720px;
+    height: 480px;
+}
+
+.imagenes_jardinerito{
+    display: flex;
+    justify-content: space-between
+}
+
+.caja_verde{
+    display: flex;
+    background-color: #77a576;
+}
+
+.caja_atributo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #9dc59c;
+    width: 100%;
+}
+
+.caja_general{
+    display: flex;
+    margin-top: 50px;
+    background-color: #9dc59c;
+}
+
+.precio_y_boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #302a23;
+    font-size: 2rem;
+    font-family: Kanit;
+}
+
+.bloque_boton_añadir_al_carrito{
+    display: flex;
+    justify-content: flex-end;
+    font-family: Kanit;
+    margin-top: 10px;
+}
+
+/*--------------------------------------------------------------------
+PAGINA APLICACION MOVIL*/
+
+.imagenes_aplicacion{
+    display: flex;
+    justify-content: center;
+}
+
+.texto_aplicacion{
+    color: #FFFFFF;
+    font-family: Kanit;
+    text-align: justify;
+    padding: 10px 40px;
+    font-size: 25px;
+}
+
+.bloque_info_aplicacion{
+    display: flex;
+    flex-direction: column;
+    background-color: #77AF52;
+    border-radius: 15px;
+}
+
+/*--------------------------------------------------------------------
+PAGINA SOBRE NOSOTROS*/
+
+.bloque_texto_sobre_nosotros{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bloque_perfiles{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.contenedor_perfiles{
+    padding: 10px;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_sobre_nosotros{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.titulo_sobre_nosotros{
+    display: flex;
+    color: #2e271e;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.texto_sobre_nosotros{
+    color: #2e271e;
+    font-family: Kanit;
+    text-align: justify;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+/*--------------------------------------------------------------------
+PAGINA CONTACTO*/
+
+.info_contacto{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 1rem; 
+    color: #51483C;
+}
+
+.bloque_nombre_correo_telefono{
+    font-family: Kanit;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque_mensaje{
+    font-family: Kanit;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls{
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: Kanit;
+    font-size: 1.2rem; 
+    height: 2.5rem;
+    border-radius: 20px;
+    width: 500px;
+    border: 2px solid #CDCDCD;
+}
+
+.textarea{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: Kanit;
+    font-size: 1.2rem; 
+    height: 200px;
+    width: 500px;
+    border-radius: 20px;
+    border: 2px solid #CDCDCD;
+}
+
+.bloque_boton_enviar{
+    justify-content: center;
+    display: flex;
+}
+
+/*--------------------------------------------------------------------
+PAGINA MI CARRITO*/
+
+.linea {
+    height: 2px;
+    background-color: #000000;
+  }
+
+.info_mi_carrito{
+    border: 2px solid #CDCDCD; /* Borde del botón */
+    border-radius: 20px; /* Borde redondeado */
+    background-color: #D9D9D9;
+    padding: 50px;
+}
+
+.info_mi_carrito2{
+    display: none;
+}
+
+.bloque_titulos_tabla{
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Kanit;
+    font-size: 25px;
+    color:#000000;
+}
+
+.bloque_contenido_tabla{
+    display: flex;
+    align-items: center;
+    font-family: Kanit;
+    text-transform: uppercase;
+    font-size: 20px;
+    color:#000000;
+    padding: 10px 0;
+}
+
+.texto_producto_micarrito{
+    padding-left: 50px;
+}
+
+.producto_tabla{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.precio_tabla{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.cantidad_tabla{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.subtotal_tabla{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.cancelar_tabla{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.bloque_boton_cantidad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numero_cantidad{
+    padding: 0 10px;
+    background-color: #77a576;
+}
+
+.caja_cafe_boton_cantidad_izq{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #025E00;
+    padding: 0 10px;
+}
+
+.caja_cafe_boton_cantidad_der{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #025E00;
+    padding: 0 10px;
+}
+
+.bloque_boton_realizar_compra{
+    justify-content: center;
+    display: flex;
+}
+
+/*--------------------------------------------------------------------
+PAGINA FACTURACION*/
+
+.info_mi_carrito5{
+    border: 2px solid #CDCDCD; /* Borde del botón */
+    border-radius: 20px; /* Borde redondeado */
+    background-color: #D9D9D9;
+    padding: 50px;
+}
+
+.info_facturacion{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 1rem; 
+    color: #51483C;
+}
+
+.titulo_facturacion{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    font-size: 2rem;
+    color: #000000;
+    font-family: Kanit;
+    text-align: justify;
+}
+
+.bloque_correo_metodos_de_pago{
+    font-family: Kanit;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque_correo{
+    font-family: Kanit;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque_resumen_de_pago{
+    font-family: Kanit;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque_boton_nequi{
+    display: flex;
+    justify-content: center;
+}
+
+.bloque_boton_daviplata{
+    display: flex;
+    justify-content: center;
+}
+
+.bloque_gris_resumen{
+    background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 10rem;
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid #CDCDCD;
+}
+
+.contenido_bloque_gris{
+    display: flex;
+    justify-content: space-between;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.bloque_boton_terminar{
+    display: flex;
+    justify-content: center;
+}
+
+/*--------------------------------------------------------------------
+PAGINA CONFIRMACION DE COMPRA*/
+
+.info_mi_carrito4{
+    border: 2px solid #CDCDCD; /* Borde del botón */
+    border-radius: 20px; /* Borde redondeado */
+    background-color: #D9D9D9;
+    padding: 50px;
+}
+
+.titulo_confirmacion_de_compra{
+    color:#000000;
+    display: flex;
+    font-size: 40px;
+    font-family: Kanit;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.texto_confirmacion_de_compras{
+    color:#000000;
+    display: flex;
+    font-size: 20px;
+    font-family: Kanit;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------------------------------------------------------------------
+@MEDIA*/
+
+@media only screen and (max-width: 1080px){ 
+
+/*HEADER*/
+
+    .container_header{
+        padding: 16px;
+        padding-left: 20px;
+        align-items: center;
+    }
+
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        padding-left: 50px;
+        align-items: center;
+    }
+
+    .navigation{
+        margin-top: 1rem;
+    }
+
+    .navigation ul{
+        display: none;
+    }
+
+    .navigation ul .show{
+        display: block;
+    }
+    
+    .navigation ul li{
+        display: block;
+    }
+    
+    .navigation ul li a{
+        display: block;
+        padding: 0.5rem 0;
+        transition: all 0.2s linear;
+        border-radius: 5px;
+    }
+    
+    .navigation ul li a:hover{
+        background:#51483C;
+        color: #E6E6E6;
+    }
+    
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-nav{
+        align-items: center;
+    }
+
+    .banner{
+        padding-top: 16px;
+    }
+
+/*BANNER*/
+
+    .texto_centrado_sobre_banner{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+/*FOOTER*/
+
+    .texto_centrado_sobre_banner{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+/*INDEX*/
+    
+    .bloque_info_jardinerito{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloque_atributos{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloque_informacion{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagen_jardinerito{
+        height: 250px;
+        width: 250px;
+    }
+
+    .bloque_imagen{
+        justify-content: center;
+        width: 180px;
+        height: 180px;
+    }
+
+    .bloque_texto{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bloque_texto_centrado{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .titulo_del_bloque{
+        font-size: 28px;
+        text-align: center;
+    }
+
+/*JARDINERITO*/
+    
+    .imagenes_jardinerito{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caja_general{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo_atributos{
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+    .texto_atributos{
+        font-size: 15px;
+    }
+
+    .video_anuncio{
+        width: 260px;
+        height: 170px;
+    }
+
+/*SOBRE NOSOTROS*/
+
+    .texto_aplicacion{
+        font-size: 20px;
+    }
+
+/*SOBRE NOSOTROS*/
+    
+    .info_sobre_nosotros{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloque_texto_sobre_nosotros{
+        padding-left: 0;
+    }
+
+    .info_sobre_nosotros{
+        margin-bottom: 10px;
+    }
+
+    .bloque_perfiles{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-between;
+    }
+
+    .bloque_imagen{
+        display: flex;
+        width: 180px;
+        padding: 10px;
+    }
+
+/*CONTACTO*/
+
+    .info_mi_carrito3{
+        border: 2px solid #CDCDCD; /* Borde del botón */
+        border-radius: 20px; /* Borde redondeado */
+        background-color: #D9D9D9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .info_contacto{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloque_mensaje{
+        display: flex;
+        padding-left: 0;
+    }
+
+    .controls{
+        flex-wrap: wrap;
+        width: 200px;
+    }
+    
+    .textarea{
+        flex-wrap: wrap;
+        width: 200px;
+    }
+
+/*MI CARRITO*/
+
+    .info_mi_carrito{
+        display: none;
+    }    
+
+    .info_mi_carrito2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titulo_facturacion{
+        font-size: 20px;
+        padding: 0;
+    }
+
+    .producto_tabla{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .texto_producto_micarrito{
+        padding: 0;
+    }
+
+    .precio_tabla{
+        width: 100%;
+    }
+
+    .cantidad_tabla{
+        width: 100%;
+    }
+
+    .subtotal_tabla{
+        width: 100%;
+    }
+
+    .bloque_titulos_tabla{
+        align-items: center;
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-family: Kanit;
+        font-size: 20px;
+        color:#000000;
+    }
+
+    .bloque_boton_realizar_compra{
+        text-align: center;
+    }
+
+/*FACTURACION*/
+
+    .info_facturacion{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloque_resumen_de_pago{
+        padding: 0;
+    }
+
+    .bloque_gris_resumen{
+        width: 200px;
+    }
+
+/*CONFIRMCACION DE COMPRA*/
+
+    .titulo_confirmacion_de_compra{
+        font-size: 30px;
+    }
+
+    .texto_confirmacion_de_compras{
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .info_mi_carrito4{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info_mi_carrito5{
+        padding: 10px;
+    }
+}
