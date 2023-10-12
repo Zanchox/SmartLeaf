@@ -27,10 +27,10 @@
 
 .body{
     display: flex;
+    flex-direction: column;
     color: #51483C;
     font-size: 1.2rem; 
     background:#E6E6E6;
-    height: 100%;
     margin: 0;
 }
 
@@ -129,6 +129,9 @@
 }
 
 .background_gris{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: #E6E6E6; /*Gris #E6E6E6 Verde #BCC8BA*/
     max-width: 1280px;
     padding: 50px;
@@ -138,6 +141,8 @@
 .container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bloque_informacion{
@@ -249,14 +254,15 @@
 
 .footer{
     display: flex;
+    flex-direction: column;
     background: #3f3f3f;
-    justify-content: center;
     align-self: flex-end;
     width: 100%;
 }
 
 .info_footer{
     display: flex;
+    justify-content: center;
     padding: 20px 0;
 }
 
@@ -808,29 +814,30 @@ PAGINA FACTURACION*/
 PAGINA CONFIRMACION DE COMPRA*/
 
 .info_mi_carrito4{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
     border: 2px solid #CDCDCD; /* Borde del botón */
     border-radius: 20px; /* Borde redondeado */
     background-color: #D9D9D9;
     padding: 50px;
 }
 
-.titulo_confirmacion_de_compra{
+.ajustes_letra_y_color_confirmacion_de_compra{
     color:#000000;
     display: flex;
-    font-size: 40px;
     font-family: Kanit;
     justify-content: center;
     align-items: center;
+}
+
+.titulo_confirmacion_de_compra{
+    font-size: 40px;
     padding-bottom: 50px;
 }
 
 .texto_confirmacion_de_compras{
-    color:#000000;
-    display: flex;
     font-size: 20px;
-    font-family: Kanit;
-    justify-content: center;
-    align-items: center;
 }
 
 /*--------------------------------------------------------------------
@@ -904,9 +911,10 @@ PAGINA CONFIRMACION DE COMPRA*/
 
 /*FOOTER*/
 
-    .texto_centrado_sobre_banner{
+    .contactos{
         padding-top: 10px;
         padding-bottom: 10px;
+        font-size: 20px;
     }
 
 /*INDEX*/
@@ -1072,10 +1080,12 @@ PAGINA CONFIRMACION DE COMPRA*/
     .producto_tabla{
         display: flex;
         flex-direction: column;
+        padding: 0;
         width: 100%;
     }
 
     .texto_producto_micarrito{
+        text-align: center;
         padding: 0;
     }
 
@@ -1094,7 +1104,7 @@ PAGINA CONFIRMACION DE COMPRA*/
     .bloque_titulos_tabla{
         align-items: center;
         flex-direction: column;
-        padding-top: 0;
+        padding-top: 10px;
         padding-bottom: 0;
         font-family: Kanit;
         font-size: 20px;
@@ -1144,7 +1154,7 @@ PAGINA CONFIRMACION DE COMPRA*/
 
 /*LANDING PAGE*/
 
-    .mensaje_landing_page{
-        font-size: 10px;
+    .texto_mensaje{
+        font-size: 40px;
     }
 }
