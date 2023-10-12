@@ -1,26 +1,26 @@
 @font-face {
     font-family: Jua;
-    src: url(../Fonts/Jua-Regular.ttf);
+    src: url(./Fonts/Jua-Regular.ttf);
 }
 
 @font-face {
     font-family: Hubballi;
-    src: url(../Fonts/Hubballi-Regular.ttf);
+    src: url(./Fonts/Hubballi-Regular.ttf);
 }
 
 @font-face {
     font-family: Kanit;
-    src: url(../Fonts/Kanit-Regular.ttf);
+    src: url(./Fonts/Kanit-Regular.ttf);
 }
 
 @font-face {
     font-family: PatrickHand;
-    src: url(../Fonts/PatrickHand-Regular.ttf);
+    src: url(./Fonts/PatrickHand-Regular.ttf);
 }
 
 @font-face {
     font-family: BaiJamjuree;
-    src: url(../Fonts/BaiJamjuree-Regular.ttf);
+    src: url(./Fonts/BaiJamjuree-Regular.ttf);
 }
 
 *{margin:0; padding:0;}
