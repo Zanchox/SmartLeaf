@@ -1,21 +1,6 @@
 @font-face {
-    font-family: Jua;
-    src: url(./Fonts/Jua-Regular.ttf);
-}
-
-@font-face {
-    font-family: Hubballi;
-    src: url(./Fonts/Hubballi-Regular.ttf);
-}
-
-@font-face {
     font-family: Kanit;
     src: url(./Fonts/Kanit-Regular.ttf);
-}
-
-@font-face {
-    font-family: PatrickHand;
-    src: url(./Fonts/PatrickHand-Regular.ttf);
 }
 
 @font-face {
@@ -25,9 +10,14 @@
 
 *{margin:0; padding:0;}
 
+.html{
+    height: 100%;
+}
+
 .body{
     display: flex;
     flex-direction: column;
+    height: 100%;
     color: #51483C;
     font-size: 1.2rem; 
     background:#E6E6E6;
@@ -119,6 +109,7 @@
 }
 
 .texto_centrado_sobre_banner{
+    letter-spacing: 5px;
     font-family: BaiJamjuree;
     font-size: 30px;
     display: flex;
@@ -190,16 +181,24 @@
     justify-content: flex-end;
 }
 
-.boton_gris {
+.boton_general{
     display: inline-block;
     padding: 10px 40px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
     margin: 10px; /* Espaciado externo (arriba/abajo, izquierda/derecha) */
+    background-color: #77AF52; /* Color de fondo */
+    color: #FFFFFF; /* Color del texto+//*Verde #40513C*/
+    border: 2px solid #025E00; /* Borde del botón */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: Kanit;
+}
+
+.boton_gris{
     background-color: #353333; /* Color de fondo */
     color: #ffffff; /* Color del texto+//*Verde #40513C*/
     border: 2px solid #000000; /* Borde del botón */
     border-radius: 5px; /* Borde redondeado */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    font-family: Kanit;
     font-size: 20px;
 }
 
@@ -209,15 +208,10 @@
 }
 
 .boton_marcas {
-    display: inline-block;
-    padding: 10px 40px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
-    margin: 10px; /* Espaciado externo (arriba/abajo, izquierda/derecha) */
     background-color: #ffffff; /* Color de fondo */
     color: #ffffff; /* Color del texto+//*Verde #40513C*/
     border: 2px solid #b0b0b0; /* Borde del botón */
     border-radius: 5px; /* Borde redondeado */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    font-family: Kanit;
     font-size: 20px;
 }
 
@@ -234,17 +228,12 @@
 }
 
 .boton_verde{
-    display: inline-block;
-    padding: 10px 40px; /* Espaciado interno (arriba/abajo, izquierda/derecha) */
     margin: 10px; /* Espaciado externo (arriba/abajo, izquierda/derecha) */
     background-color: #77AF52; /* Color de fondo */
     color: #FFFFFF; /* Color del texto+//*Verde #40513C*/
     border: 2px solid #025E00; /* Borde del botón */
     border-radius: 10px; /* Borde redondeado */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    text-transform: uppercase;
     font-size: 1.2rem;
-    font-family: Kanit;
 }
 
 .boton_verde:hover{
@@ -472,14 +461,14 @@ PAGINA JARDINERITO*/
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #9dc59c;
+    background-color: #77a576; /*Verde Claro #9dc59c*/
     width: 100%;
 }
 
 .caja_general{
     display: flex;
     margin-top: 50px;
-    background-color: #9dc59c;
+    background-color: #77a576; /*Verde Claro #9dc59c*/
 }
 
 .precio_y_boton{
@@ -555,14 +544,14 @@ PAGINA SOBRE NOSOTROS*/
 
 .titulo_sobre_nosotros{
     display: flex;
-    color: #2e271e;
+    color: #000000;
     justify-content: center;
     padding-bottom: 20px;
     font-size: 1.5rem;
 }
 
 .texto_sobre_nosotros{
-    color: #2e271e;
+    color: #000000;
     font-family: Kanit;
     text-align: justify;
     padding-bottom: 20px;
@@ -730,7 +719,7 @@ PAGINA MI CARRITO*/
 /*--------------------------------------------------------------------
 PAGINA FACTURACION*/
 
-.info_mi_carrito5{
+.info_facturacion_general{
     border: 2px solid #CDCDCD; /* Borde del botón */
     border-radius: 20px; /* Borde redondeado */
     background-color: #D9D9D9;
@@ -742,7 +731,7 @@ PAGINA FACTURACION*/
     justify-content: space-between;
     text-transform: uppercase;
     font-size: 1rem; 
-    color: #51483C;
+    color: #000000;
 }
 
 .titulo_facturacion{
@@ -813,7 +802,7 @@ PAGINA FACTURACION*/
 /*--------------------------------------------------------------------
 PAGINA CONFIRMACION DE COMPRA*/
 
-.info_mi_carrito4{
+.info_confirmacion_compra{
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -834,6 +823,7 @@ PAGINA CONFIRMACION DE COMPRA*/
 .titulo_confirmacion_de_compra{
     font-size: 40px;
     padding-bottom: 50px;
+    letter-spacing: 8px;
 }
 
 .texto_confirmacion_de_compras{
@@ -884,7 +874,7 @@ PAGINA CONFIRMACION DE COMPRA*/
     }
     
     .navigation ul li a:hover{
-        background:#51483C;
+        background:#000000;
         color: #E6E6E6;
     }
     
@@ -1029,7 +1019,7 @@ PAGINA CONFIRMACION DE COMPRA*/
 
 /*CONTACTO*/
 
-    .info_mi_carrito3{
+    .info_contacto_general{
         border: 2px solid #CDCDCD; /* Borde del botón */
         border-radius: 20px; /* Borde redondeado */
         background-color: #D9D9D9;
@@ -1142,13 +1132,13 @@ PAGINA CONFIRMACION DE COMPRA*/
         font-size: 15px;
     }
 
-    .info_mi_carrito4{
+    .info_confirmacion_compra{
         justify-content: center;
         align-items: center;
         text-align: center;
     }
 
-    .info_mi_carrito5{
+    .info_facturacion_general{
         padding: 10px;
     }
 
