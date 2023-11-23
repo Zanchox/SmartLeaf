@@ -43,7 +43,7 @@
     padding: 16px;
     padding-left: 100px;
     padding-right: 100px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Kanit;
     text-transform: uppercase;
     justify-content: space-between;
@@ -65,6 +65,7 @@
 
 .navigation{
     padding-left: 50px;
+    padding-right: 50px;
 }
 
 .navigation ul{
@@ -437,13 +438,14 @@ PAGINA JARDINERITO*/
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.video_anuncio{
-    display: flex;
-    background-color: #025E00;
-    width: 720px;
-    height: 480px;
+.bloque_video_anuncio iframe{
+    background-color: #353535;
+    width: 840px;
+    height: 550px;
 }
 
 .imagenes_jardinerito{
@@ -563,7 +565,9 @@ PAGINA CONTACTO*/
 
 .info_contacto{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     font-size: 1rem; 
     color: #51483C;
@@ -577,7 +581,7 @@ PAGINA CONTACTO*/
 
 .bloque_mensaje{
     font-family: Kanit;
-    padding-left: 50px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -663,25 +667,25 @@ PAGINA MI CARRITO*/
 }
 
 .precio_tabla{
-    width: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
 }
 
 .cantidad_tabla{
-    width: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
 }
 
 .subtotal_tabla{
-    width: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
 }
 
 .cancelar_tabla{
-    width: 200px;
+    width: 100px;
     display: flex;
     justify-content: center;
 }
@@ -702,6 +706,7 @@ PAGINA MI CARRITO*/
     border-top-left-radius: 5px;
     background-color: #025E00;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 .caja_cafe_boton_cantidad_der{
@@ -709,6 +714,7 @@ PAGINA MI CARRITO*/
     border-top-right-radius: 5px;
     background-color: #025E00;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 .bloque_boton_realizar_compra{
@@ -724,6 +730,8 @@ PAGINA FACTURACION*/
     border-radius: 20px; /* Borde redondeado */
     background-color: #D9D9D9;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .info_facturacion{
@@ -734,26 +742,72 @@ PAGINA FACTURACION*/
     color: #000000;
 }
 
+.imagen_cambiante_jardinerito{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.bloque_cuadrados_colores {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cuadrado_color {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    display: block;
+    border: 2px solid #a3a3a3; /* Bordes para resaltar */
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    color: #000; /* Color del texto */
+    transition: filter 0.1s ease; /* Agrega transición para suavizar el cambio */
+}
+
+.cuadrado_color:hover {
+    background-color: #ccc; /* Cambia el color de fondo al pasar el mouse */
+    filter: brightness(0.5); /* Oscurece el color al pasar el mouse */
+}
+
+.cuadrado_color:active {
+    border-color: #000000; /* Cambia el color del borde al hacer clic */
+    border: 2px solid #000000;
+}
+
 .titulo_facturacion{
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 2rem;
     color: #000000;
     font-family: Kanit;
     text-align: justify;
 }
 
-.bloque_correo_metodos_de_pago{
+.bloque_metodos_de_pago{
+    font-family: Kanit;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+.bloque_label{
     font-family: Kanit;
     display: flex;
     flex-direction: column;
 }
 
-.bloque_correo{
-    font-family: Kanit;
+.bloque_datos_de_recibo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .bloque_resumen_de_pago{
@@ -761,6 +815,8 @@ PAGINA FACTURACION*/
     padding-left: 20px;
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .bloque_boton_nequi{
@@ -794,9 +850,16 @@ PAGINA FACTURACION*/
     margin-top: 20px;
 }
 
+.bloque_boton_subir{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
 .bloque_boton_terminar{
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 
 /*--------------------------------------------------------------------
@@ -805,7 +868,8 @@ PAGINA CONFIRMACION DE COMPRA*/
 .info_confirmacion_compra{
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #CDCDCD; /* Borde del botón */
     border-radius: 20px; /* Borde redondeado */
     background-color: #D9D9D9;
@@ -830,6 +894,70 @@ PAGINA CONFIRMACION DE COMPRA*/
     font-size: 20px;
 }
 
+.texto_confirmacion_de_compras li{
+    width: -1px;
+
+}
+
+/*----------------------*/
+/* Estilos para la nueva sección de detalles del recibo */
+.detalle_recibo {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 35px;
+    margin-top: 40px;
+    justify-content: center;
+    border: 2px solid #CDCDCD; /* Borde del botón */
+    border-radius: 20px; /* Borde redondeado */
+}
+
+.titulo_recibo{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.lista-datos-recibo{
+    color:#000000;
+    display: flex;
+    flex-direction: column;
+    font-family: Kanit;
+}
+
+.detalle_recibo ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.detalle_recibo li {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-right: 400px;
+}
+
+.detalle_recibo li strong {
+    display: block;
+    width: 100%;
+}
+
+.detalle_recibo li span {
+    font-weight: bold;
+    color: rgb(0, 206, 45);
+}
+
+.dato_compra{
+    padding-left: 0;
+}
+
+.li_compra{
+    padding-left: 20px;
+}
+
+.detalle_recibo li strong {
+    display: flex;
+}
+
 /*--------------------------------------------------------------------
 @MEDIA*/
 
@@ -851,14 +979,14 @@ PAGINA CONFIRMACION DE COMPRA*/
     }
 
     .navigation{
-        margin-top: 1rem;
+        width: 100%;
     }
 
     .navigation ul{
         display: none;
     }
 
-    .navigation ul .show{
+    .navigation ul.show{
         display: block;
     }
     
@@ -874,14 +1002,15 @@ PAGINA CONFIRMACION DE COMPRA*/
     }
     
     .navigation ul li a:hover{
-        background:#000000;
-        color: #E6E6E6;
+        background:#353333;
+        color: #FFFFFF;
     }
-    
+
     .header{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .logo-nav{
@@ -978,9 +1107,9 @@ PAGINA CONFIRMACION DE COMPRA*/
         font-size: 15px;
     }
 
-    .video_anuncio{
-        width: 260px;
-        height: 170px;
+    .bloque_video_anuncio iframe{
+        width: 450px;
+        height: 360px;
     }
 
 /*SOBRE NOSOTROS*/
@@ -1064,7 +1193,8 @@ PAGINA CONFIRMACION DE COMPRA*/
 
     .titulo_facturacion{
         font-size: 20px;
-        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .producto_tabla{
@@ -1115,6 +1245,7 @@ PAGINA CONFIRMACION DE COMPRA*/
 
     .bloque_resumen_de_pago{
         padding: 0;
+        padding-bottom: 10px;
     }
 
     .bloque_gris_resumen{
@@ -1140,6 +1271,23 @@ PAGINA CONFIRMACION DE COMPRA*/
 
     .info_facturacion_general{
         padding: 10px;
+    }
+
+    /*----------------------*/
+    /* Estilos para la nueva sección de detalles del recibo */
+    .detalle_recibo {
+        flex-wrap: wrap;
+    }
+    
+    .bloque_recibo{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detalle_recibo li {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding-right: 100px;
     }
 
 /*LANDING PAGE*/

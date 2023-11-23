@@ -5,6 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <title>Smartleaf</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var cuadrados = document.querySelectorAll('.cuadrado_color');
+            var imagenJardinerito = document.getElementById('imagenJardinerito');
+            var formulario = document.getElementById('formulario'); // Obtén el formulario por su ID
+            var totalResumenElemento = document.getElementById('totalResumen');
+            
+            // Define un array con los nombres de los colores en el mismo orden que los cuadrados
+            var nombresColores = ["Gris", "Marron", "Verde Claro", "Verde Oscuro"];
+
+            cuadrados.forEach(function (cuadrado, index) {
+                cuadrado.addEventListener('click', function () {
+                    // Cambiar la imagen al hacer clic en un cuadro
+                    switch (index) {
+                        case 0:
+                            imagenJardinerito.src = './Imagenes/Perspectiva_Jardinerito_1.png';
+                            break;
+                        case 1:
+                            imagenJardinerito.src = './Imagenes/Perspectiva_Jardinerito_2.png';
+                            break;
+                        case 2:
+                            imagenJardinerito.src = './Imagenes/Perspectiva_Jardinerito_3.png';
+                            break;
+                        case 3:
+                            imagenJardinerito.src = './Imagenes/Perspectiva_Jardinerito_4.png';
+                            break;
+                        default:
+                            // Puedes agregar un caso predeterminado si es necesario
+                            break;
+                    }
+
+                    // Configurar el valor del cuadro seleccionado en el input oculto
+                    document.getElementById('colorInput').value = nombresColores[index];
+
+                    // Obtener el valor del subtotal
+                    var valorSubtotal = parseInt(localStorage.getItem("valorSubtotal")) || 300000;
+
+                    // Calcular el valor del producto multiplicando el subtotal por la cantidad seleccionada
+                    document.getElementById('contadorInput').value = (parseInt(localStorage.getItem("valorContador")) || 1);
+                    var valorProducto = valorSubtotal * (parseInt(localStorage.getItem("valorContador")) || 1);
+                    
+                    // Asignar el valor del producto y del contador a los campos ocultos correspondientes
+                    document.getElementById('productoInput').value = valorProducto.toLocaleString(); // Convierte el valor a formato de moneda si es necesario
+
+                    // Calcular el total sumando el valor del producto y el costo de envío
+                    var total = valorProducto + 7000;
+                    document.getElementById('totalInput').value = total.toLocaleString(); // Convierte el valor a formato de moneda si es necesario
+                    
+                    //----------------------------------------------------------------------------------------------------------
+                    //COLOR
+                    // Alternar la clase cuadrado_seleccionado
+                    cuadro.classList.toggle('cuadrado_seleccionado');
+
+                    // Remover la clase cuadrado_seleccionado de los demás cuadrados
+                    cuadrados.forEach(function (c, i) {
+                        if (i !== index) {
+                            c.classList.remove('cuadrado_seleccionado');
+                        }
+                    });
+                });
+            });
+
+            // Actualizar valores en el formulario antes de enviarlo
+            formulario.addEventListener("submit", function () {
+                document.getElementById('Name').value = document.getElementById('NameInput').value;
+                document.getElementById('Tel').value = document.getElementById('TelInput').value;
+                document.getElementById('Adress').value = document.getElementById('AdressInput').value;
+                document.getElementById('Email').value = document.getElementById('EmailInput').value;
+            });
+        });
+    </script>
 </head>
 <body>
     <header class="header">
@@ -13,9 +84,15 @@
                 <div class="logo">
                     <a href="home.html" class="logo"> <img class="sombra" src="./Imagenes/logo_smart_leaf.jpeg" alt="Logo_Smart_leaf" width="63" height="63"> </a>
                 </div>
-                <span class="menu-icon">Ver menu</span>
+                <div class="menu-icon" id="toggleMenu">
+                    <!-- SVG icono de menú hamburguesa -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                    </svg>
+                </div>
                 <nav class="navigation">
-                    <ul class="show">
+                    <ul id="menuList">
                         <li><a href="jardinerito.html">Jardinerito</a></li>
                         <li><a href="aplicacion_movil.html">Aplicativo Móvil</a></li>
                         <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
@@ -39,57 +116,119 @@
         <div class="container">
             <div class="background_gris">
                 <div class="info_facturacion_general">
-                    <div class="titulo_facturacion">
-                        <h3>Elige tu método de pago</h3>
-                    </div>
-                    <hr class="linea">
-                    <div class="info_facturacion">
-                        <div class="bloque_correo_metodos_de_pago">
-                            <div class="bloque_correo">
-                                <label for="Email">Correo Electrónico</label>
-                                <input class="controls" type="text" id="Email" name="Email" required><br>
+
+
+                    <div>
+                        <hr class="linea">
+                        <div class="titulo_facturacion">
+                            <h3>Elige tu método de pago</h3>
+                        </div>
+                        <hr class="linea">
+                        <div class="info_facturacion">
+                            <div class="bloque_metodos_de_pago">
+                                
+                                
+                                <div class="bloque_boton_nequi">
+                                    <a href="https://recarga.nequi.com.co/bdigitalpsl/#!/" target="_blank" rel="noreferrer noopener" class="boton_marcas boton_general"> <img src="./Imagenes/Marca_Nequi.png" width="120px" alt="Marca Nequi"></a>
+                                </div>
+                                <div class="bloque_boton_daviplata">
+                                    <a href="https://www.daviplata.com/wps/portal/daviplata/Home/QueEsDaviPlata/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zizQNNDDycTQz93B2dXQ0CDYzMPV3CjA0M3E30wwkpiAJKG-AAjgZA_VFYlDgaOAUZOYEM8DfCqgDFjILcCINMR0VFAIXsUVc!/dz/d5/L2dBISEvZ0FBIS9nQSEh/" target="_blank" rel="noreferrer noopener" class="boton_marcas boton_general"> <img src="./Imagenes/Marca_DaviPlata.png" width="120px" alt="Marca Daviplata"></a>
+                                </div>
                             </div>
-                            <div class="bloque_boton_nequi">
-                                <a href="https://recarga.nequi.com.co/bdigitalpsl/#!/" target="_blank" rel="noreferrer noopener" class="boton_marcas boton_general"> <img src="./Imagenes/Marca_Nequi.png" width="120px" alt="Marca Nequi"></a>
-                            </div>
-                            <div class="bloque_boton_daviplata">
-                                <a href="https://www.daviplata.com/wps/portal/daviplata/Home/QueEsDaviPlata/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zizQNNDDycTQz93B2dXQ0CDYzMPV3CjA0M3E30wwkpiAJKG-AAjgZA_VFYlDgaOAUZOYEM8DfCqgDFjILcCINMR0VFAIXsUVc!/dz/d5/L2dBISEvZ0FBIS9nQSEh/" target="_blank" rel="noreferrer noopener" class="boton_marcas boton_general"> <img src="./Imagenes/Marca_DaviPlata.png" width="120px" alt="Marca Daviplata"></a>
+                            <div class="bloque_resumen_de_pago">
+                                <label for="Resumen">Resumen</label>
+                                <div class="bloque_gris_resumen">
+                                    <div class="contenido_bloque_gris">
+                                        <div>
+                                            <h4>PRODUCTO(S)</h4>
+                                        </div>
+                                        <div>
+                                            <h4 id="subtotalResumen">$300.000</h4>
+                                        </div>
+                                    </div>
+                                    <div class="contenido_bloque_gris">
+                                        <div>
+                                            <h4>ENVÍO</h4>
+                                        </div>
+                                        <div>
+                                            <h4>$7.000</h4>
+                                        </div>
+                                    </div>
+                                    <div class="contenido_bloque_gris">
+                                        <div>
+                                            <h4>TOTAL</h4>
+                                        </div>
+                                        <div>
+                                            <h4 id="totalResumen">$307.000</h4>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="bloque_resumen_de_pago">
-                            <label for="Resumen">Resumen</label>
-                            <div class="bloque_gris_resumen">
-                                <div class="contenido_bloque_gris">
-                                    <div>
-                                        <h4>PRODUCTO(S)</h4>
-                                    </div>
-                                    <div>
-                                        <h4>$300.000</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido_bloque_gris">
-                                    <div>
-                                        <h4>ENVÍO</h4>
-                                    </div>
-                                    <div>
-                                        <h4>$7.000</h4>
-                                    </div>
-                                </div>
-                                <div class="contenido_bloque_gris">
-                                    <div>
-                                        <h4>TOTAL</h4>
-                                    </div>
-                                    <div>
-                                        <h4>$307.000</h4>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+
+
+                    <div>
+                        <hr class="linea">
+                        <div class="titulo_facturacion">
+                            <h3>Elige el color del Jardinerito</h3>
+                        </div>
+                        <hr class="linea">
+                        <div class="imagen_cambiante_jardinerito">
+                            <img id="imagenJardinerito" src="./Imagenes/Perspectiva_Jardinerito.png" alt="Perspectiva Jardinerito" width="200">
+                        </div>
+                        <div class="bloque_cuadrados_colores">
+                            <a class="cuadrado_color" style="background-color: #3a3a3a;"></a>
+                            <a class="cuadrado_color" style="background-color: rgb(75, 36, 36);"></a>
+                            <a class="cuadrado_color" style="background-color: #00ff00;"></a>
+                            <a class="cuadrado_color" style="background-color: #106b27;"></a>
                         </div>
                     </div>
-                    <hr class="linea">
-                    <div class="bloque_boton_terminar">
-                        <a href="confirmacion_de_compra.html" class="boton_verde boton_general"> Terminar</a>
+
+
+                    <div>
+                        <hr class="linea">
+                        <div class="titulo_facturacion">
+                            <h3>Datos de Recibo</h3>
+                        </div>
+                        <hr class="linea">
+                        <!-- Agrega el formulario aquí -->
+                        <form action="guardar_datos.php" method="post" id="formulario">
+                            <!-- ... (Otros elementos del formulario) ... -->
+                            <div class="bloque_datos_de_recibo">
+                                <div class="bloque_label">
+                                    <label for="Name">Nombre</label>
+                                    <input class="controls" type="text" id="NameInput" name="Name" required><br>
+                                </div>
+                                <div class="bloque_label">
+                                    <label for="Tel">Teléfono</label>
+                                    <input class="controls" type="text" id="TelInput" name="Tel" required><br>
+                                </div>
+                                <div class="bloque_label">
+                                    <label for="Adress">Dirección</label>
+                                    <input class="controls" type="text" id="AdressInput" name="Adress" required><br>
+                                </div>
+                                <div class="bloque_label">
+                                    <label for="Email">Correo Electrónico</label>
+                                    <input class="controls" type="text" id="EmailInput" name="Email" required><br>
+                                </div>
+                            </div>
+                            <!-- ... (Otros elementos del formulario) ... -->
+                            <input type="hidden" name="color" id="colorInput" value="">
+                            <input type="hidden" name="contador" id="contadorInput" value="">
+                            <input type="hidden" name="producto" id="productoInput" value="">
+                            <input type="hidden" name="envio" value="7000">
+                            <input type="hidden" name="total" id="totalInput" value="">
+                            
+                            <div class="bloque_boton_subir">
+                                <button type="submit" class="boton_verde boton_general">Subir</button>
+                            </div>
+                        </form>
+                        
+                        
+                        <hr class="linea">
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -101,5 +240,7 @@
             </div>
         </div>
     </footer>
+    <script src="datos_recibo.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

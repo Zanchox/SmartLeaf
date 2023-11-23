@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        // Realizar la petición al servidor para obtener los datos del recibo
+        fetch('obtener_datos.php')
+            .then(response => response.json())
+            .then(data => {
+                // Actualizar los elementos en la página con los datos obtenidos
+                document.getElementById('Name').textContent = data.nombre;
+                document.getElementById('Tel').textContent = data.telefono;
+                document.getElementById('Adress').textContent = data.direccion;
+                document.getElementById('Email').textContent = data.correo;
+                document.getElementById('color').textContent = data.color;
+                document.getElementById('cantidad').textContent = data.cantidad;
+                document.getElementById('producto').textContent = data.producto;
+                document.getElementById('envio').textContent = data.envio;
+                document.getElementById('total').textContent = data.total;
+            })
+            .catch(error => console.error('Error al obtener los datos del recibo:', error));
+        });
+    </script>
     <title>Smartleaf</title>
 </head>
 <body>
@@ -13,9 +33,15 @@
                 <div class="logo">
                     <a href="home.html" class="logo"> <img class="sombra" src="./Imagenes/logo_smart_leaf.jpeg" alt="Logo_Smart_leaf" width="63" height="63"> </a>
                 </div>
-                <span class="menu-icon">Ver menu</span>
+                <div class="menu-icon" id="toggleMenu">
+                    <!-- SVG icono de menú hamburguesa -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                    </svg>
+                </div>
                 <nav class="navigation">
-                    <ul class="show">
+                    <ul id="menuList">
                         <li><a href="jardinerito.html">Jardinerito</a></li>
                         <li><a href="aplicacion_movil.html">Aplicativo Móvil</a></li>
                         <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
@@ -47,6 +73,28 @@
                     <div class="texto_confirmacion_de_compras ajustes_letra_y_color_confirmacion_de_compra">
                         <p>Gracias por contar con nosotros, Estamos confirmando tu compra. En cuanto esté lista, recibiras una confirmación de tu compra.</p>
                     </div>
+                    <!-- Nueva sección para mostrar detalles del recibo -->
+                    <div class="detalle_recibo">
+                        <div class="titulo_recibo ajustes_letra_y_color_confirmacion_de_compra">
+                            <h4>Detalles de la Compra</h4>
+                        </div>
+                        <hr class="linea">
+                        <div class="bloque_recibo">
+                            <ul class="texto_confirmacion_de_compras lista-datos-recibo">
+                                <li class="li_compra"><strong>Nombre:</strong> <span class="dato_compra" id="Name"></span></li>
+                                <li class="li_compra"><strong>Teléfono:</strong> <span class="dato_compra" id="Tel"></span></li>
+                                <li class="li_compra"><strong>Dirección:</strong> <span class="dato_compra" id="Adress"></span></li>
+                                <li class="li_compra"><strong>Correo:</strong> <span class="dato_compra" id="Email"></span></li>
+                                <hr class="linea">
+                                <li class="li_compra"><strong>Color:</strong> <span class="dato_compra" id="color"></span></li>
+                                <li class="li_compra"><strong>Cantidad:</strong> <span class="dato_compra" id="cantidad"></span></li>
+                                <li class="li_compra"><strong>Producto:</strong> <span class="dato_compra" id="producto"></span></li>
+                                <li class="li_compra"><strong>Envío:</strong> <span class="dato_compra" id="envio"></span></li>
+                                <hr class="linea">
+                                <li class="li_compra"><strong>Total:</strong> <span class="dato_compra" id="total"></span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,5 +106,6 @@
             </div>
         </div>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
